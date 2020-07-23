@@ -1,28 +1,41 @@
-# AIPND-revision
-This repository contains _REVISED_ code and associated files for the AI Programming with Python Nanodegree program. This repository consists of a number of tutorial notebooks for various coding exercises and programming labs that will be used to supplement the lessons of the course.
+# Image Classifier using Python on Various Images
+In this project I used an _already created_ image classifier to identify dog breeds.
 
-## Table Of Contents
+# Project Overview
+A city is hosting a dog show and I have volunteered to help the organizing committee with contestant registration. Every participant that registers must submit an image of their dog along with biographical information about their dog. The registration system tags the images based upon the biographical information.
 
-### Tutorial Notebooks
-* No revisions
+Some people are planning on registering pets that __aren’t actual dogs.__
 
-### Programming Project
-* [Intro to Python Project - Classifying Pet Images:](https://github.com/udacity/AIPND-revision/tree/master/intropyproject-classify-pet-images "Classifying Pet Images Project") Determine which CNN architecture model works best at classifying images of dogs and their breeds.
+I needed to use an already developed `Python` classifier to make sure the participants are dogs.
 
-### NumPy and Pandas Mini-Projects
-* No revisions 
+## How To Run The Program:
+Ensure you have Python 3.7 or above installed. Then run the following:
 
-### Matplotlib
-* No revisions 
+`python check_images.py`
 
-### Quiz Notes
-* [Notes:](https://github.com/udacity/AIPND-revision/tree/master/notes "Notes") This directory contains more information about certain quizzes that are testing more challenging concepts. Additionally, one will find the [Frequently Asked Questions](https://github.com/udacity/AIPND-revision/blob/master/notes/project_intro-to-python.md) for the _Intro to Python Project_. Click on the filename to view the contents of the notes on a _quiz_ or the _Intro to Python Project_.
+The default argument for the image folder is `pet_images/` and the default argument for the CNN Model Architecture is `VGG`.
 
-## Dependencies
+To change the folder and/or CNN Model Architecture (to resnet or alexnet), run the following:
 
-Each directory has a `requirements.txt` describing the minimal dependencies required to run the notebooks in that directory.
+`python check_images.py --dir your_folder --arch resnet`, OR
 
-### pip
+`python check_images.py --dir your_folder --arch alexnet`
+
+If you're on a Mac, instead of typing `python`, type `python 3`.
+
+## Dependencies:
+
+There is a `requirements.txt` file describing the minimal dependencies required to run the script.
 
 To install these dependencies with pip, you can issue `pip3 install -r requirements.txt`.
 
+# Built With
+* [Python 3.7.7](python.org) - The Programming Language used.
+* [humanfriendly](https://pypi.org/project/humanfriendly/) - A Python Library that was used, specifically, the `format_timespan` module.
+* [time](https://docs.python.org/3/library/time.html) - A Python Library that was used.
+* [PyTorch](https://pytorch.org/) - A Python Library that was used.
+
+# Credits
+* [Udacity AI Programming with Python](udacity.com) - Course material and notes/hints.
+* [Python Documentation](https://docs.python.org/3/) - Official Python Documentation.
+* [Humanfriendly Documentation](https://humanfriendly.readthedocs.io/en/latest/#api-documentation) - Official humanfriendly Documentation.
