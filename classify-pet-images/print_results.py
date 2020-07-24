@@ -21,12 +21,8 @@
 #             False in the function call within main (defaults to False)
 #         This function does not output anything other than printing a summary
 #         of the final results.
-##
-#       Define print_results function below, specifically replace the None
-#       below by the function definition of the print_results function. 
-#       Notice that this function doesn't to return anything because it  
-#       prints a summary of the results using results_dic and results_stats_dic
-# 
+
+
 def print_results(results_dic, results_stats_dic, model, 
                   print_incorrect_dogs = False, print_incorrect_breed = False):
     """
@@ -60,9 +56,9 @@ def print_results(results_dic, results_stats_dic, model,
     """    
     # Prints summary statistics over the run
     print('\n\n*** Results Summary for CNN Model Architecture', model.upper(), '***')
-    print('{:20}: {:3d}'.format('N Images', results_stats_dic['n_images']))
-    print('{:20}: {:3d}'.format('N Dog Images', results_stats_dic['n_dogs_img']))
-    print('{:20}: {:3d}'.format('N Not-Dog Images', results_stats_dic['n_notdogs_img']))
+    print(f'{"N Images":20}: {results_stats_dic["n_images"]:3d}')
+    print(f'{"N Dog Images":20}: {results_stats_dic["n_dogs_img"]:3d}')
+    print(f'{"N Not-Dog Images":20}: {results_stats_dic["n_notdogs_img"]:3d}')
 
     # Prints summary statistics (percentages) on Model Run
     print(" ")
