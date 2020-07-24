@@ -15,10 +15,7 @@
 # Imports python modules
 from os import listdir
 
-# TODO 2: Define get_pet_labels function below please be certain to replace None
-#       in the return statement with results_dic dictionary that you create 
-#       with this function
-# 
+
 def get_pet_labels(image_dir):
     """
     Creates a dictionary of pet labels (results_dic) based upon the filenames 
@@ -45,27 +42,25 @@ def get_pet_labels(image_dir):
     # Creates empty dictionary for the results (pet labels, etc.)
     results_dic = dict()
 
-    for idx in range(0, len(filename_list), 1):
+    for filename in filename_list:
         # Skips file if starts with . (like .DS_Store of Mac OSX) because it 
-        # isn't an pet image file
-        if filename_list[idx][0] != '.':
+        # isn't a pet image file
+        if filename[0] != '.':
             # Creates temporary label variable to hold pet label name extracted
             pet_label = ''
             # process each filename in the in_files list to extract the dog breed 
             # name from the filename
-            pet_image_label = filename_list[idx]
+            pet_image_label = filename.split('.')[0]
             format_pet_image = pet_image_label.lower().split('_')
             
-            for word in format_pet_image:
-                if word.isalpha():
-                    pet_label += word + ' '
+            pet_label = ' '.join([word for word in format_pet_image if word.isalpha()])
 
         # If filename doesn't already exist in dictionary add it and it's
         # pet label - otherwise print an error message because indicates 
         # duplicate files (filenames)
-        if filename_list[idx] not in results_dic:
-            results_dic[filename_list[idx]] = [pet_label.strip()]
+        if filename not in results_dic:
+            results_dic[filename] = [pet_label.strip()]
         else:
-            print("** Warning: Duplicate files exist in directory:", filename_list[idx])
+            print("** Warning: Duplicate files exist in directory:", filename)
 
     return results_dic
